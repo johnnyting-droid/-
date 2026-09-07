@@ -698,6 +698,7 @@ function init(){
     btn.addEventListener('click',function(){showSection(btn.dataset.section);});
   });
   document.getElementById('printBtn').addEventListener('click',function(){window.print();});
+  document.head.appendChild(Object.assign(document.createElement('style'),{textContent:'@media print{.section:not(.active){display:none !important}nav,.sync-bar,header .editor-badge,.toolbar,#loginScreen{display:none !important}}'}));
   document.getElementById('exportBtn').addEventListener('click',exportCSV);
   document.getElementById('logsRefreshBtn').addEventListener('click',loadLogs);
 }
